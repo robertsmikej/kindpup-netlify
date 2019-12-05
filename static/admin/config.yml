@@ -1,0 +1,64 @@
+backend:
+  name: git-gateway
+  branch: master
+
+media_folder: static/img
+public_folder: /img
+
+site_url: https://www.kindpup.com
+display_url: https://www.kindpup.com
+logo_url: ""
+
+show_preview_links: true
+
+collections:
+  - name: 'pages'
+    label: 'Pages'
+    identifier_field: page_name
+    format: 'json'
+    folder: 'assets/content/pages'
+    create: true
+    slug: '{{page_name}}'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Page Name', name: 'name', widget: 'string' }
+      - label: "Hero"
+        name: "hero"
+        widget: "object"
+        fields:
+        - { label: 'Hero Header', name: 'header', widget: 'string', required: false }
+        - { label: 'Hero Para', name: 'para', widget: 'text', required: false }
+        - { label: 'Hero Button Text', name: 'button_text', widget: 'string', required: false }
+        - { label: 'Hero Button Link', name: 'button_link', widget: 'string', required: false }
+        - { label: 'Hero Background Image', name: 'background_image', widget: 'file', required: false }
+        - { label: 'Hero Background Video', name: 'background_video', widget: 'file', required: false }
+        - { label: 'Hero Sub Image', name: 'sub_image', widget: 'file', required: false }
+      - label: "Page Intro"
+        name: "page_intro"
+        widget: "object"
+        fields:
+        - { label: 'Page Intro Section Status', name: 'status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
+        - { label: 'Page Intro Header', name: 'header', widget: 'string', required: false }
+        - { label: 'Page Intro Para', name: 'para', widget: 'text', required: false }
+      - label: "Page Section - 1"
+        name: "page_section_1"
+        widget: "object"
+        fields:
+        - { label: 'Status', name: 'status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
+        - { label: 'Header Text', name: 'header', widget: 'string', required: false }
+        - { label: 'Paragraph Text', name: 'para', widget: 'text', required: false}
+      - label: "Page Section - 2"
+        name: "page_section_2"
+        widget: "object"
+        fields:
+        - { label: 'Status', name: 'status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
+        - { label: 'Header Text', name: 'header', widget: 'string', required: false }
+        - { label: 'Paragraph Text', name: 'para', widget: 'text', required: false}
+      - label: "Page Section - 3"
+        name: "page_section_3"
+        widget: "object"
+        fields:
+        - { label: 'Status', name: 'status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
+        - { label: 'Header Text', name: 'header', widget: 'string', required: false }
+        - { label: 'Paragraph Text', name: 'para', widget: 'text', required: false}
