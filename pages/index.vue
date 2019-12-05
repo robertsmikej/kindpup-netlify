@@ -1,37 +1,31 @@
 <template>
-  <div class="container">
-    <div>
-      <h1 class="title">
-        KindPup
-      </h1>
-      <h2 class="subtitle">
-        My delightful Nuxt.js project
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
-  </div>
+  <section class="container">
+        <Hero :page="page"/>
+        <!-- <Signup/>
+        <SideBySide/> -->
+        <!-- <Grid/> -->
+  </section>
 </template>
 
 <script>
+import Hero from '~/components/sitewide/Hero.vue'
+import Signup from '~/components/contacts/Signup.vue'
+import Grid from '~/components/Grid.vue'
+import SideBySide from '~/components/SideBySide.vue'
 
 export default {
     components: {
-        Logo
+        Hero,
+        Signup,
+        Grid,
+        SideBySide
+    },
+    computed: {
+        page: function () {
+            return this.$store.state.pages.filter(function (p) {
+                return p.page_title === "Home";
+            })[0];
+        }
     },
     head() {
         return {

@@ -12,9 +12,51 @@ logo_url: ""
 show_preview_links: true
 
 collections:
+  - name: 'sitewide'
+    label: 'Sitewide'
+    identifier_field: name
+    format: 'json'
+    folder: 'assets/content/sitewide'
+    create: true
+    slug: '{{slug}}'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Name', name: 'name', widget: 'string' }
+      - { label: 'Logo', name: 'logo', widget: 'file', required: false }
+      - { label: 'Address Line 1', name: 'address_line_1', widget: 'string', required: false }
+      - { label: 'Address Line 2', name: 'address_line_2', widget: 'string', required: false }
+      - { label: 'Address Line 3', name: 'address_line_3', widget: 'string', required: false }
+      - { label: 'Phone Number', name: 'phone_number', widget: 'string', required: false }
+      - { label: 'Email Address', name: 'email_address', widget: 'string', required: false }
+      - label: "Contact Box"
+        name: "contact_box"
+        widget: "object"
+        fields:
+        - { label: 'Header', name: 'header', widget: 'string', required: false }
+        - { label: 'Para', name: 'para', widget: 'text', required: false }
+        - { label: 'Button Link', name: 'button_link', widget: 'string', required: false }
+        - { label: 'Button Text', name: 'button_text', widget: 'string', required: false }
+      - label: "Footer Details"
+        name: "footer_details"
+        widget: "object"
+        fields:
+        - { label: 'Footer Company Para', name: 'para', widget: 'text', required: false }
+        - { label: 'Footer Copyright', name: 'copyright', widget: 'string', required: false }
+      - label: "Social Media"
+        name: "social_media"
+        widget: "object"
+        fields:
+        - { label: 'Show Social Media', name: 'show_social', widget: 'boolean', required: false }
+        - { label: 'Facebook Link', name: 'facebook_link', widget: 'string', required: false }
+        - { label: 'Instagram Link', name: 'instagram_link', widget: 'string', required: false }
+        - { label: 'Twitter Link', name: 'twitter_link', widget: 'string', required: false }
+        - { label: 'GitHub Link', name: 'github_link', widget: 'string', required: false }
+        - { label: 'Dribble Link', name: 'dribble_link', widget: 'string', required: false }
+
   - name: 'pages'
     label: 'Pages'
-    identifier_field: page_name
+    identifier_field: name
     format: 'json'
     folder: 'assets/content/pages'
     create: true
@@ -27,20 +69,21 @@ collections:
         name: "hero"
         widget: "object"
         fields:
-        - { label: 'Hero Header', name: 'header', widget: 'string', required: false }
-        - { label: 'Hero Para', name: 'para', widget: 'text', required: false }
-        - { label: 'Hero Button Text', name: 'button_text', widget: 'string', required: false }
-        - { label: 'Hero Button Link', name: 'button_link', widget: 'string', required: false }
-        - { label: 'Hero Background Image', name: 'background_image', widget: 'file', required: false }
-        - { label: 'Hero Background Video', name: 'background_video', widget: 'file', required: false }
-        - { label: 'Hero Sub Image', name: 'sub_image', widget: 'file', required: false }
+        - { label: 'Header', name: 'header', widget: 'string', required: false }
+        - { label: 'Para', name: 'para', widget: 'text', required: false }
+        - { label: 'Button Text', name: 'button_text', widget: 'string', required: false }
+        - { label: 'Button Link', name: 'button_link', widget: 'string', required: false }
+        - { label: 'Button Color', name: 'button_color', widget: 'string', required: false }
+        - { label: 'Background Image', name: 'background_image', widget: 'file', required: false }
+        - { label: 'Background Video', name: 'background_video', widget: 'file', required: false }
+        - { label: 'Sub Image', name: 'sub_image', widget: 'file', required: false }
       - label: "Page Intro"
         name: "page_intro"
         widget: "object"
         fields:
-        - { label: 'Page Intro Section Status', name: 'status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
-        - { label: 'Page Intro Header', name: 'header', widget: 'string', required: false }
-        - { label: 'Page Intro Para', name: 'para', widget: 'text', required: false }
+        - { label: 'Status', name: 'status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
+        - { label: 'Header Text', name: 'header', widget: 'string', required: false }
+        - { label: 'Paragraph Text', name: 'para', widget: 'text', required: false }
       - label: "Page Section - 1"
         name: "page_section_1"
         widget: "object"
@@ -55,10 +98,28 @@ collections:
         - { label: 'Status', name: 'status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
         - { label: 'Header Text', name: 'header', widget: 'string', required: false }
         - { label: 'Paragraph Text', name: 'para', widget: 'text', required: false}
-      - label: "Page Section - 3"
-        name: "page_section_3"
-        widget: "object"
-        fields:
-        - { label: 'Status', name: 'status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
-        - { label: 'Header Text', name: 'header', widget: 'string', required: false }
-        - { label: 'Paragraph Text', name: 'para', widget: 'text', required: false}
+
+  - name: 'nav'
+    label: 'Nav Items'
+    identifier_field: title
+    format: 'json'
+    folder: 'assets/content/nav'
+    create: true
+    slug: '{{slug}}'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Status', name: 'status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
+      - label: "Sort Number"
+        name: "sort"
+        widget: "number"
+        default: 1
+        valueType: "int"
+        min: 1
+        max: 20
+      - { label: 'Title', name: 'title', widget: 'string', required: false }
+      - { label: 'Para', name: 'para', widget: 'text', required: false }
+      - { label: 'Link', name: 'link', widget: 'string', required: false }
+      - { label: 'Icon', name: 'icon', widget: 'file', required: false }
+
+    
