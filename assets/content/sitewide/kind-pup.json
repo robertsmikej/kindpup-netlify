@@ -21,7 +21,7 @@
         "type": "text"
       }
     ],
-    "type": "Send Inquiry"
+    "button_text": "Submit Inquiry"
   },
   "logo": "/img/kindpuplogo-medium.png",
   "name": "Kind Pup",
