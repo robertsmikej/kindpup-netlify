@@ -74,9 +74,6 @@ export default {
             });
             this.$axios.post('/', data).then(function(Response) {
                 console.log(Response);
-            }).catch(function (err) {
-                console.log(err);
-                this.errors.push(err)
             });
         }
     }

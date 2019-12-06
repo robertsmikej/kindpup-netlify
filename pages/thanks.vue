@@ -38,20 +38,5 @@ export default {
 </script>
 
 <style>
-.contact__page__form__container {
-    padding: 0vh 20px;
-    max-width: 800px;
-    margin: 50px auto;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: flex-start;
-    justify-content: center;
-}
-.contact__form__header {
-    color: #FCA24D;
-    margin: 0 0 30px;
-    font-size: 1.4em;
-    line-height: 1.4em;
-}
+
 </style>

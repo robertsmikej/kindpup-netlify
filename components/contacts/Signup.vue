@@ -2,7 +2,7 @@
     <div class="sign__up__container">
         <div class="sign__up__text__container" v-html="$md.render(signup.text)"></div>
         <div class="sign__up__input__container">
-            <form id="contact__form" data-netlify="true" name="Email-Signup" class="sign__up__form" action="/thanks" method="post" @submit.prevent="handleSubmit">
+            <form id="contact__form" data-netlify="true" name="Email-Signup" class="sign__up__form" action="/thanks" method="post">
                 <input type="hidden" name="Email-Signup" value="Sign Up Box Submission" />
                 <input aria-label="Email Address" name="email" placeholder="Eg. kindpup@gmail.com" type="email" v-model="signUpFormData.email" required class="sign__up__input"/>
                 <button data-submit="Sending" class="sign__up__button">{{ signup.button_text }}</button>
@@ -36,9 +36,6 @@ export default {
             });
             this.$axios.post('/', emaildata).then(function(Response) {
                 console.log(Response);
-            }).catch(function (err) {
-                console.log(err);
-                this.errors.push(err)
             });
         }
     },
