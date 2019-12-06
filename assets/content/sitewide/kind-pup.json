@@ -7,15 +7,15 @@
   "contact_form": {
     "items": [
       {
-        "required": true,
         "text": "Full Name",
+        "required": true,
         "short_name": "name",
         "placeholder": "E.G. John Manchild",
         "type": "text"
       },
       {
-        "required": true,
         "text": "Company Name",
+        "required": true,
         "short_name": "company",
         "placeholder": "E.G. Pet Inc.",
         "type": "text"
