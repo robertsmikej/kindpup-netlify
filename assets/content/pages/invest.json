@@ -6,6 +6,8 @@
     "image": "/img/canadian-rockies.jpg"
   },
   "page_section_1": {
-    "shown": false
+    "shown": true,
+    "main_text": "### Get Our Investor Presentation Below\n\nThis paragraph is totally stolen. Fill out this form to be emailed our investor presentation which includes an overview of our business vision, overall market strategy, brand platform, management team and more.",
+    "image_1": "/img/group_presentation.png"
   }
 }
