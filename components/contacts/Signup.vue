@@ -2,10 +2,10 @@
     <div class="sign__up__container">
         <div v-if="this.sent === false" class="sign__up__text__container" v-html="$md.render(signup.text)"></div>
         <div class="sign__up__input__container">
-            <form id="contact__form" v-if="this.sent === false" data-netlify="true" name="Sawtooth-Contact" class="sign__up__form" action="" method="post" @submit.prevent="handleSubmit">
+            <form id="contact__form" v-if="this.sent === false" data-netlify="true" name="KindPup-Signup" class="sign__up__form" action="" method="post" @submit.prevent="handleSubmit">
                 <input type="hidden" name="form-name" value="KindPup-Signup" />
             <!-- <form class="sign__up__form" v-if="this.sent === false" action="" method="post" @submit.prevent="handleSubmit"> -->
-                <input aria-label="Email Address" name="email" placeholder="Eg. kindpup@gmail.com" type="email" v-model="formData.email" required class="sign__up__input"/>
+                <input aria-label="Email Address" name="email" placeholder="Eg. kindpup@gmail.com" type="email" v-model="signUpFormData.email" required class="sign__up__input"/>
                 <button data-submit="Sending" class="sign__up__button">{{ signup.button_text }}</button>
             </form>
             <div class="sign__up__sent" v-if="this.sent">
@@ -27,22 +27,23 @@ export default {
     },
     data() {
         return {
-            formData: {
+            signUpFormData: {
                 email: "",
-                list_type: "initial_email_sign_up" 
+                list_type: "email_sign_up" 
             },
             sent: false
         }
     },
     methods: {
         handleSubmit: function () {
-            let data = {
-                "email_address": this.formData.email,
-                "list_type": this.formData.list_type
-            };
-            let d = this;
-            axios.post('https://kindpup.sawtooth.dev/directus/public/_/items/responses', data).then(function (response) {
-                d.sent = true;
+            let data = JSON.stringify({
+                "email_address": this.signUpFormData.email,
+                "list_type": this.signUpFormData.list_type
+            });
+            this.$axios.post('/', data).then(function(Response) {
+                console.log(Response);
+            }).catch(function (err) {
+                this.errors.push(err)
             });
         }
     },
