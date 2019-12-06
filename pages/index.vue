@@ -1,6 +1,6 @@
 <template>
   <section class="container">
-        <Hero :page="page"/>
+        <!-- <Hero :page="page"/> -->
         <!-- <Signup/>
         <SideBySide/> -->
         <!-- <Grid/> -->
