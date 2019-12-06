@@ -1,15 +1,32 @@
 {
-  "name": "Kind Pup",
-  "legal_name": "Kind Pup LLC.",
-  "logo": "/img/kindpuplogo-medium.png",
-  "address_line_1": "Address Line 1",
-  "address_line_3": "Boise, ID 83702",
-  "email_address": "contact@kindpup.com",
   "creeper_bar": {
     "shown": true,
     "text": "Looking To Invest In Doggy CBD?",
     "link": "/invest"
   },
+  "contact_form": {
+    "items": [
+      {
+        "text": "Full Name",
+        "short_name": "name",
+        "placeholder": "E.G. John Manchild",
+        "type": "text"
+      },
+      {
+        "text": "Company Name",
+        "short_name": "company",
+        "placeholder": "E.G. Pet Inc.",
+        "type": "text"
+      }
+    ],
+    "type": "Send Inquiry"
+  },
+  "logo": "/img/kindpuplogo-medium.png",
+  "name": "Kind Pup",
+  "legal_name": "Kind Pup LLC.",
+  "address_line_1": "Address Line 1",
+  "email_address": "contact@kindpup.com",
+  "address_line_3": "Boise, ID 83702",
   "sign_up": {
     "text": "### Sign up for the latest updates on our launch.",
     "button_text": "Sign Up"
