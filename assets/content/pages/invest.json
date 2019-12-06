@@ -1,0 +1,11 @@
+{
+  "name": "Invest",
+  "hero": {
+    "header": "Ready To Invest?",
+    "para": "Learn more about our company and its vision below.",
+    "image": "/img/canadian-rockies.jpg"
+  },
+  "page_section_1": {
+    "shown": false
+  }
+}
