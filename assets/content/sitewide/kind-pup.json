@@ -1,12 +1,12 @@
 {
   "name": "Kind Pup",
+  "legal_name": "Kind Pup LLC.",
   "logo": "/img/kindpuplogo-medium.png",
   "address_line_1": "Address Line 1",
   "address_line_3": "Boise, ID 83702",
   "email_address": "contact@kindpup.com",
   "creeper_bar": {
     "shown": true,
-    "status": "published",
     "text": "Looking To Invest In Doggy CBD?",
     "link": "/invest"
   }
