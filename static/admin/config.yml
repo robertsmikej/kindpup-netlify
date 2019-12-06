@@ -105,6 +105,13 @@ collections:
         - { label: "Shown", name: "shown", widget: "boolean", default: true, required: false }
         - { label: 'Main Text', name: 'main_text', widget: 'markdown', required: false, buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list"] }
         - { label: 'Image 1', name: 'image_1', widget: 'file', required: false }
+      - label: "Page Section 2"
+        name: "page_section_2"
+        widget: "object"
+        fields:
+        - { label: "Shown", name: "shown", widget: "boolean", default: true, required: false }
+        - { label: 'Main Text', name: 'main_text', widget: 'markdown', required: false, buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list"] }
+        - { label: 'Image 1', name: 'image_1', widget: 'file', required: false }
 
 
   - name: 'nav'
@@ -125,10 +132,7 @@ collections:
         valueType: "int"
         min: 1
         max: 20
-      - { label: 'Title', name: 'title', widget: 'string', required: false }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Link', name: 'link', widget: 'string' }
       - { label: 'Para', name: 'para', widget: 'text', required: false }
-      - { label: 'Link', name: 'link', widget: 'string', required: false }
-      - { label: 'Icon', name: 'icon', widget: 'file', required: false }
-
-
-    
+      - { label: 'Icon', name: 'icon', widget: 'file', required: false }    

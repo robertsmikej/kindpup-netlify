@@ -1,11 +1,11 @@
 <template>
     <section class="container">
-        <Hero :page="page"/>
+        <Hero :hero="page.hero"/>
         <div class="investor__contact__outer">
             <div class="investor__information">
                 <div class="investor__information__inner">
                     <div class="information__img__container">
-                        <img src="https://kindpup.sawtooth.dev/directus/public/uploads/_/originals/team_presentation_2.svg" alt="" class="information__img">
+                        <img :src="page.page_section_1.image_1" :alt="page.hero.para" class="information__img">
                     </div>
                     <div class="information__text__container">
                         <h3>Get Our Investor Presentation Below</h3>
@@ -15,7 +15,7 @@
             </div>
             <div class="investor__contact__inner">
                 <div class="investor__contact__side">
-                    <Grid :items="facts"/>
+                    <!-- <Grid :items="facts"/> -->
                 </div>
                 <div class="investor__contact__side investor__contact__form__container">
                     <h3 class="investor__form__header">Please Complete This Form For More Information</h3>
@@ -41,15 +41,8 @@ export default {
     },
     computed: {
         page: function () {
-            return this.$store.state.pages.filter(function (p) {
-                return p.page_title === "Investors";
-            })[0];
+            return this.$store.state.pages.invest
         }
-    },
-    asyncData ({ app, route }) {
-        return axios.get("https://kindpup.sawtooth.dev/directus/public/_/items/investor_facts?fields=*.*.*").then(response => {
-            return {facts: response.data.data};
-        })
     }
 }
 </script>
@@ -78,7 +71,7 @@ export default {
     align-content: center;
     justify-content: space-around;
     max-width: 1000px;
-    margin: 0px auto;
+    margin: 60px auto 0;
 }
 .information__text__container {
     flex: 1;
@@ -115,7 +108,7 @@ export default {
 }
 .investor__contact__side {
     flex: 1 1 50%;
-    padding: 20px 5vw;
+    padding: 20px 3vw;
 }
 .investor__contact__form__container {
    padding-top: 60px;

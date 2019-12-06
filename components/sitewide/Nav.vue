@@ -5,7 +5,7 @@
                 <img :src="sitewide.logo" :alt="sitewide.name + '\'s Logo'" class="nav__logo__img">
             </nuxt-link>
             <div class="nav__links" :class="{showMobileNav: this.mobileNav}" @click="toggleMobileNav">
-                <nuxt-link v-for="(navitem, index) in nav" :key="index" class="nav__link" :to="navItemNormalize(navitem)">{{ navitem.title }}</nuxt-link>
+                <nuxt-link v-for="(navitem, index) in nav" :key="index" class="nav__link" :to="navitem.link">{{ navitem.title }}</nuxt-link>
                 <div class="nav__close"></div>
             </div>
             <div class="nav__hamburger" :class="{changeCloseButton: this.mobileNav}" @click="toggleMobileNav">
@@ -35,16 +35,6 @@ export default {
         }
     },
     methods: {
-        navItemNormalize: function (name) {
-            if (name.url) {
-                return name.url
-            }
-            let newname = name.title.toLowerCase().replace(/ /g, "-");
-            if (newname.indexOf("home") >= 0) {
-                return "/";
-            }
-            return newname;
-        },
         toggleMobileNav: function () {
             this.mobileNav = !this.mobileNav;
         }
