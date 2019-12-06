@@ -36,19 +36,19 @@ export default {
     },
     methods: {
         handleSubmit: function () {
-            let data = JSON.stringify({
+            let emaildata = JSON.stringify({
                 email_address: this.signUpFormData.email,
                 list_type: this.signUpFormData.list_type
             });
-            this.$axios.post('/', data).then(function(Response) {
+            axios.post('/', emaildata).then(function(Response) {
                 console.log(Response);
-                console.log("reposnser");
             }).catch(function (err) {
                 console.log(err);
                 this.errors.push(err)
             });
         }
     },
+    
     head () {
         return {
             title: "Kind Pup | Natural CBD Oil for dogs",
