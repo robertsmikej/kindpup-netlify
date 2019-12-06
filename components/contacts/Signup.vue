@@ -3,7 +3,7 @@
         <div v-if="this.sent === false" class="sign__up__text__container" v-html="$md.render(signup.text)"></div>
         <div class="sign__up__input__container">
             <form id="contact__form" v-if="this.sent === false" data-netlify="true" name="KindPup-Signup" class="sign__up__form" action="" method="post" @submit.prevent="handleSubmit">
-                <input type="hidden" name="form-name" value="KindPup-Signup" />
+                <input type="hidden" name="KindPup-Signup" value="KindPup-Signup" />
             <!-- <form class="sign__up__form" v-if="this.sent === false" action="" method="post" @submit.prevent="handleSubmit"> -->
                 <input aria-label="Email Address" name="email" placeholder="Eg. kindpup@gmail.com" type="email" v-model="signUpFormData.email" required class="sign__up__input"/>
                 <button data-submit="Sending" class="sign__up__button">{{ signup.button_text }}</button>
@@ -40,7 +40,7 @@ export default {
                 email_address: this.signUpFormData.email,
                 list_type: this.signUpFormData.list_type
             });
-            axios.post('/', emaildata).then(function(Response) {
+            this.$axios.post('/', emaildata).then(function(Response) {
                 console.log(Response);
             }).catch(function (err) {
                 console.log(err);
