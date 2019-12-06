@@ -39,11 +39,10 @@ export default {
   */
   modules: [
     // Doc: https://github.com/nuxt-community/axios-module#usage
-    '@nuxtjs/axios',
     '@nuxtjs/markdownit'
   ],
   markdownit: {
-    injected: true,
+    injected: true
   },
   /*
   ** Build configuration
