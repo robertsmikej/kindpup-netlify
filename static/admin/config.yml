@@ -60,7 +60,7 @@ collections:
     format: 'json'
     folder: 'assets/content/pages'
     create: true
-    slug: '{{page_name}}'
+    slug: '{{name}}'
     editor:
       preview: false
     fields:
