@@ -1,0 +1,11 @@
+{
+  "name": "Contact",
+  "hero": {
+    "header": "Contact Us",
+    "para": "Please feel free to contact us for any reason using the form below.",
+    "image": "/img/shepards.jpg"
+  },
+  "page_section_1": {
+    "shown": false
+  }
+}
