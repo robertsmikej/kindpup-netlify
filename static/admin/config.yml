@@ -44,14 +44,6 @@ collections:
         - { label: 'Text', name: 'text', widget: 'markdown', required: false, buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list"] }
         - { label: 'Button Text', name: 'button_text', widget: 'string', required: false }
         - { label: 'Button Link', name: 'button_link', widget: 'string', required: false }
-      - label: "Contact Box"
-        name: "contact_box"
-        widget: "object"
-        fields:
-        - { label: 'Header', name: 'header', widget: 'string', required: false }
-        - { label: 'Para', name: 'para', widget: 'text', required: false }
-        - { label: 'Button Link', name: 'button_link', widget: 'string', required: false }
-        - { label: 'Button Text', name: 'button_text', widget: 'string', required: false }
       - label: "Footer Details"
         name: "footer_details"
         widget: "object"
@@ -68,6 +60,20 @@ collections:
         - { label: 'Twitter Link', name: 'twitter_link', widget: 'string', required: false }
         - { label: 'GitHub Link', name: 'github_link', widget: 'string', required: false }
         - { label: 'Dribble Link', name: 'dribble_link', widget: 'string', required: false }
+      - label: "Contact Form"
+        name: "contact_form"
+        widget: "object"
+        fields:
+        - name: 'items'
+          label: 'Contact Form Item'
+          widget: "list"
+          fields:
+          - {label: "Text", name: "text", widget: "string"}
+          - {label: "Required", name: "required", widget: "boolean", default: false, required: false }
+          - {label: "Short Name", name: "short_name", widget: "string", required: false}
+          - {label: "Placeholder", name: "placeholder", widget: "string"}
+          - {label: "Field Type", name: "type", widget: "string"}
+        - {label: "Submit Button Text", name: "button_text", widget: "string"}
 
   - name: 'pages'
     label: 'Pages'
@@ -123,5 +129,6 @@ collections:
       - { label: 'Para', name: 'para', widget: 'text', required: false }
       - { label: 'Link', name: 'link', widget: 'string', required: false }
       - { label: 'Icon', name: 'icon', widget: 'file', required: false }
+
 
     

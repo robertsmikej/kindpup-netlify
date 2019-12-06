@@ -1,11 +1,7 @@
 <template>
     <section class="container">
-        <!-- {{page.hero}} -->
-        <Hero :hero="page.hero"/>
-        <div class="contact__page__form__container">
-            <h3 class="contact__form__header">Please fill out the form below to contact us</h3>
-            <ContactUs :contactCompany="false" :messageText="'How Can We Help?'"/>
-        </div>
+        <h1>Thank you for your interest in {{ sitewide.name }}!</h1>
+        <h2>We'll be in touch soon.</h2>
     </section>
 </template>
 
@@ -21,19 +17,19 @@ export default {
         ContactUs
     },
     computed: {
-        page: function () {
-            return this.$store.state.pages.contact
+        sitewide: function () {
+            return this.$store.state.sitewide
         }
     },
     head () {
         return {
-            title: "Kind Pup | Contact Us",
+            title: "Kind Pup | Thank You For Your Inquiry",
             meta: [
                 { 
                     hid: 'description',
                     name: 'description',
-                    content: "Do you have any questions for the Kind Pup? We're here to help with your dog CBD questions!",
-                    hid: 'robots', name: 'robots', content: 'index, follow'
+                    content: "We'll be in touch soon with more details about our product",
+                    hid: 'robots', name: 'robots', content: 'noindex, nofollow'
                 }
             ]
         }

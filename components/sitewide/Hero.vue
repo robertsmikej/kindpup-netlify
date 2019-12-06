@@ -4,7 +4,6 @@
         <div class="hero__inner">
             <div class="hero__text__container">
                 <div class="hero__text__inner">
-                    <!-- <div v-if="hero.hero_main_text" v-html="page.hero_main_text"></div> -->
                     <h1>{{ hero.header }}</h1>
                     <p>{{ hero.para }}</p>
                     <div class="hero__cta" v-if="hero.button_text">
@@ -23,23 +22,13 @@
 
 <script>
 export default {
-    computed: {
-        heroBackground: function () {
-            if (this.page.background_image === null) {
-                this.noHeroImg = true;
-                return "#FFF";
-            } else {
-                return this.page.background_image;
-            }
-        }
+    props: {
+        hero: Object
     },
     data() {
         return {
             noHeroImg: false
         }
-    },
-    props: {
-        hero: Object
     }
 }
 </script>

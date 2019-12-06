@@ -1,17 +1,12 @@
 <template>
     <div class="sign__up__container">
-        <div v-if="this.sent === false" class="sign__up__text__container" v-html="$md.render(signup.text)"></div>
+        <div class="sign__up__text__container" v-html="$md.render(signup.text)"></div>
         <div class="sign__up__input__container">
-            <form id="contact__form" v-if="this.sent === false" data-netlify="true" name="KindPup-Signup" class="sign__up__form" action="" method="post" @submit.prevent="handleSubmit">
-                <input type="hidden" name="KindPup-Signup" value="KindPup-Signup" />
-            <!-- <form class="sign__up__form" v-if="this.sent === false" action="" method="post" @submit.prevent="handleSubmit"> -->
+            <form id="contact__form" data-netlify="true" name="Email-Signup" class="sign__up__form" action="/thanks" method="post" @submit.prevent="handleSubmit">
+                <input type="hidden" name="Email-Signup" value="Sign Up Box Submission" />
                 <input aria-label="Email Address" name="email" placeholder="Eg. kindpup@gmail.com" type="email" v-model="signUpFormData.email" required class="sign__up__input"/>
                 <button data-submit="Sending" class="sign__up__button">{{ signup.button_text }}</button>
             </form>
-            <div class="sign__up__sent" v-if="this.sent">
-                <h2>You're signed up!</h2>
-                <p>Keep your ears open, and we'll howl at you soon!</p>
-            </div>
         </div>
     </div>
 </template>
@@ -30,8 +25,7 @@ export default {
             signUpFormData: {
                 email: "",
                 list_type: "email_sign_up" 
-            },
-            sent: false
+            }
         }
     },
     methods: {
@@ -48,7 +42,6 @@ export default {
             });
         }
     },
-    
     head () {
         return {
             title: "Kind Pup | Natural CBD Oil for dogs",
@@ -118,15 +111,5 @@ export default {
         text-transform: uppercase;
         cursor: pointer;
         border: none;
-    }
-    .sign__up__sent h2 {
-        color: #FFF;
-        font-size: 2em;
-    }
-    .sign__up__sent p {
-        color: #FFF;
-        margin-top: 24px;
-        font-size: 1.4em;
-        font-weight: 500;
     }
 </style>
