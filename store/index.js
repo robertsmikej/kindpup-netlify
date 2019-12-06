@@ -43,13 +43,13 @@ function getData(files) {
 
 export const actions = {
     async nuxtServerInit({ commit }) {
-        // var files = await require.context('~/assets/content/page/', false, /\.json$/);
-        // var file = files.keys().map(key => {
-        //     let res = files(key);
-        //     res.slug = key.slice(2, -5);
-        //     return res;
-        // });
-        // await commit('setPages', file);
+        var d = await require.context('~/assets/content/pages/', false, /\.json$/);
+        var f = d.keys().map(key => {
+            let res = d(key);
+            res.slug = key.slice(2, -5);
+            return res;
+        });
+        await commit('setPages', f);
 
         // let navfiles = await require.context('~/assets/content/nav/', false, /\.json$/);
         // let navs = navfiles.keys().map(key => {
