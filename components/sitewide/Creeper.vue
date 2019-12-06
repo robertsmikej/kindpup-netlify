@@ -1,7 +1,7 @@
 <template>
     <div class="creeper__bar">
-        <nuxt-link :to="sitewide.creeper_link" class="creeper__bar__inner">
-            <h2>{{ sitewide.creeper_text }}</h2>
+        <nuxt-link :to="creeper.link" class="creeper__bar__inner">
+            <h2>{{ creeper.text }}</h2>
         </nuxt-link>
     </div>
 </template>
@@ -9,8 +9,8 @@
 <script>
 export default {
     computed: {
-        sitewide: function () {
-            return this.$store.state.sitewide;
+        creeper: function () {
+            return this.$store.state.sitewide.creeper_bar;
         }
     }
 }
@@ -19,7 +19,6 @@ export default {
 <style>
 .creeper__bar {
     width: 100%;
-    height: 30px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -33,6 +32,8 @@ export default {
     z-index: 5;
 }
 .creeper__bar__inner {
+    width: 100%;
+    height: 30px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

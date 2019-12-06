@@ -2,15 +2,13 @@
     <footer>
         <div class="footer__section">
             <div class="footer__copyright">
-                <p>©{{ year }} <span>Kind Pup</span></p>
+                <p>©{{ year }} <span> {{ sitewide.name }}</span></p>
             </div>
         </div>
     </footer>
 </template>
 
 <script>
-
-
 export default {
     computed: {
         sitewide: function () {

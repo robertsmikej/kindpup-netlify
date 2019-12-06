@@ -1,9 +1,9 @@
 <template>
   <section class="container">
-        <Hero :page="page"/>
-        <!-- <Signup/>
-        <SideBySide/> -->
-        <!-- <Grid/> -->
+        <Hero :hero="page.hero"/>
+        <Signup/>
+        <SideBySide :section="page.page_section_1"/>
+        <Grid/>
   </section>
 </template>
 
@@ -22,9 +22,7 @@ export default {
     },
     computed: {
         page: function () {
-            return this.$store.state.pages.filter(function (p) {
-                return p.page_title === "Home";
-            })[0];
+            return this.$store.state.pages.home;
         }
     },
     head() {
@@ -44,12 +42,5 @@ export default {
 </script>
 
 <style>
-.container {
-    margin: 0 auto;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
+
 </style>

@@ -1,10 +1,12 @@
 <template>
     <div class="sign__up__container">
-        <h3 v-if="this.sent === false">Sign up for the lastest updates on our launch</h3>
+        <div v-if="this.sent === false" class="sign__up__text__container" v-html="$md.render(signup.text)"></div>
         <div class="sign__up__input__container">
-            <form class="sign__up__form" v-if="this.sent === false" action="" method="post" @submit.prevent="handleSubmit">
-                <input aria-label="Email Address" placeholder="Eg. fido@gmail.com" type="email" v-model="formData.email" required class="sign__up__input"/>
-                <button data-submit="Sending" class="sign__up__button">Sign Up</button>
+            <form id="contact__form" v-if="this.sent === false" data-netlify="true" name="Sawtooth-Contact" class="sign__up__form" action="" method="post" @submit.prevent="handleSubmit">
+                <input type="hidden" name="form-name" value="KindPup-Signup" />
+            <!-- <form class="sign__up__form" v-if="this.sent === false" action="" method="post" @submit.prevent="handleSubmit"> -->
+                <input aria-label="Email Address" name="email" placeholder="Eg. kindpup@gmail.com" type="email" v-model="formData.email" required class="sign__up__input"/>
+                <button data-submit="Sending" class="sign__up__button">{{ signup.button_text }}</button>
             </form>
             <div class="sign__up__sent" v-if="this.sent">
                 <h2>You're signed up!</h2>
@@ -19,7 +21,9 @@ const axios = require('axios');
 
 export default {
     computed: {
-        
+        signup: function () {
+            return this.$store.state.sitewide.sign_up;
+        }
     },
     data() {
         return {

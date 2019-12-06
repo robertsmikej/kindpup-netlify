@@ -1,40 +1,18 @@
 <template>
     <div class="side__by__side">
         <div class="sbs__img__container">
-            <div class="sbs__img__container__inner" :style="{backgroundImage: 'url(https://kindpup.sawtooth.dev/directus/public/uploads/_/originals/pugikins-window.jpg)' }">
-                <!-- <img src="https://kindpup.sawtooth.dev/directus/public/uploads/_/originals/pugikins-window.jpg" alt="" class="sbs__img"> -->
-            </div>
+            <div class="sbs__img__container__inner" :style="{backgroundImage: 'url(' + section.image_1  + ')' }"></div>
         </div>
         <div class="sbs__text__container">
-            <div class="sbs__text__inner">
-                <h2>Potential Benefits of Doggy CBD</h2>
-                <h3>There may be more than you think!</h3>
-                <ul>
-                    <li>Improving general wellness and health</li>
-                    <li>Reducing inflammation</li>
-                    <li>Increasing muscle repair after strenuous exercise</li>
-                    <li>Improving circulation</li>
-                    <li>Promoting bone growth</li>
-                    <li>Reducing pain</li>
-                    <li>Reducing stress and anxiety (including separation anxiety)</li>
-                    <li>Reducing nausea</li>
-                    <li>Stimulating appetite</li>
-                    <li>Lowering blood sugar levels</li>
-                    <li>Minimizing aggression disorders and noise phobias</li>
-                    <li>Combating degenerative diseases and aging</li>
-                    <li>Increasing cognitive function</li>
-                    <li>Reducing or helping to control seizures</li>
-                    <li>Inhibiting cancer cell growth</li>
-                </ul>
-            </div>
+            <div class="sbs__text__inner" v-html="$md.render(section.main_text)"></div>
         </div>
     </div>
 </template>
 
 <script>
 export default {
-    computed: {
-        
+    props: {
+        section: Object
     }
 }
 </script>
@@ -61,13 +39,21 @@ export default {
     }
     .sbs__text__container {
         order: 2;
-        padding: 100px 40px 40px;
+        flex: 1 1 50%;
+        
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
         align-content: center;
         justify-content: flex-start;
         text-align: center;
+        position: relative;
+    }
+    .sbs__text__inner {
+        padding: 140px 40px 80px;
+        position: sticky;
+        top: 0;
+        left: 0;
     }
     .sbs__text__inner h2 {
         margin: 0 auto 40px;

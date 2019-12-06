@@ -7,7 +7,7 @@ public_folder: /img
 
 site_url: https://www.kindpup.com
 display_url: https://www.kindpup.com
-logo_url: ""
+logo_url: "https://www.kindpup.com/img/kindpuplogo-medium.png"
 
 show_preview_links: true
 
@@ -23,12 +23,27 @@ collections:
       preview: false
     fields:
       - { label: 'Name', name: 'name', widget: 'string' }
+      - { label: 'Full Legal Name', name: 'legal_name', widget: 'string' }
       - { label: 'Logo', name: 'logo', widget: 'file', required: false }
       - { label: 'Address Line 1', name: 'address_line_1', widget: 'string', required: false }
       - { label: 'Address Line 2', name: 'address_line_2', widget: 'string', required: false }
       - { label: 'Address Line 3', name: 'address_line_3', widget: 'string', required: false }
       - { label: 'Phone Number', name: 'phone_number', widget: 'string', required: false }
       - { label: 'Email Address', name: 'email_address', widget: 'string', required: false }
+      - label: "Creeper Bar"
+        name: "creeper_bar"
+        widget: "object"
+        fields:
+        - { label: "Shown", name: "shown", widget: "boolean", default: true, required: false }
+        - { label: 'Text', name: 'text', widget: 'string', required: false }
+        - { label: 'Link', name: 'link', widget: 'string', required: false }
+      - label: "Sign Up Boxes"
+        name: "sign_up"
+        widget: "object"
+        fields:
+        - { label: 'Text', name: 'text', widget: 'markdown', required: false, buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list"] }
+        - { label: 'Button Text', name: 'button_text', widget: 'string', required: false }
+        - { label: 'Button Link', name: 'button_link', widget: 'string', required: false }
       - label: "Contact Box"
         name: "contact_box"
         widget: "object"
@@ -74,30 +89,17 @@ collections:
         - { label: 'Button Text', name: 'button_text', widget: 'string', required: false }
         - { label: 'Button Link', name: 'button_link', widget: 'string', required: false }
         - { label: 'Button Color', name: 'button_color', widget: 'string', required: false }
-        - { label: 'Background Image', name: 'background_image', widget: 'file', required: false }
-        - { label: 'Background Video', name: 'background_video', widget: 'file', required: false }
+        - { label: 'Image', name: 'image', widget: 'file', required: false }
+        - { label: 'Video', name: 'video', widget: 'file', required: false }
         - { label: 'Sub Image', name: 'sub_image', widget: 'file', required: false }
-      - label: "Page Intro"
-        name: "page_intro"
-        widget: "object"
-        fields:
-        - { label: 'Status', name: 'status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
-        - { label: 'Header Text', name: 'header', widget: 'string', required: false }
-        - { label: 'Paragraph Text', name: 'para', widget: 'text', required: false }
-      - label: "Page Section - 1"
+      - label: "Page Section 1"
         name: "page_section_1"
         widget: "object"
         fields:
-        - { label: 'Status', name: 'status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
-        - { label: 'Header Text', name: 'header', widget: 'string', required: false }
-        - { label: 'Paragraph Text', name: 'para', widget: 'text', required: false}
-      - label: "Page Section - 2"
-        name: "page_section_2"
-        widget: "object"
-        fields:
-        - { label: 'Status', name: 'status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
-        - { label: 'Header Text', name: 'header', widget: 'string', required: false }
-        - { label: 'Paragraph Text', name: 'para', widget: 'text', required: false}
+        - { label: "Shown", name: "shown", widget: "boolean", default: true, required: false }
+        - { label: 'Main Text', name: 'main_text', widget: 'markdown', required: false, buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list"] }
+        - { label: 'Image 1', name: 'image_1', widget: 'file', required: false }
+
 
   - name: 'nav'
     label: 'Nav Items'
@@ -109,7 +111,7 @@ collections:
     editor:
       preview: false
     fields:
-      - { label: 'Status', name: 'status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
+      - { label: "Shown", name: "shown", widget: "boolean", default: true, required: false }
       - label: "Sort Number"
         name: "sort"
         widget: "number"

@@ -1,20 +1,20 @@
 <template>
-    <div class="hero" :class="{heroNoImage: this.noHeroImg}" :style="{background: 'url(' + heroBackground + ')' }">
+    <div class="hero" :class="{heroNoImage: this.noHeroImg}" :style="{background: 'url(' + hero.image + ')' }">
         <div class="hero__overlay" v-if="!this.noHeroImg"></div>
         <div class="hero__inner">
             <div class="hero__text__container">
                 <div class="hero__text__inner">
-                    <div v-if="page.hero_main_text" v-html="page.hero_main_text"></div>
+                    <!-- <div v-if="hero.hero_main_text" v-html="page.hero_main_text"></div> -->
                     <h1>{{ hero.header }}</h1>
                     <p>{{ hero.para }}</p>
-                    <div class="hero__cta" v-if="page.button_text">
-                        <nuxt-link v-if="page.button_link" :to="page.button_link" :style="{backgroundColor:page.button_color}" class="hero__cta__button">{{ page.button_text }}</nuxt-link>
+                    <div class="hero__cta" v-if="hero.button_text">
+                        <nuxt-link v-if="hero.button_link" :to="hero.button_link" :style="{backgroundColor:hero.button_color}" class="hero__cta__button">{{ hero.button_text }}</nuxt-link>
                     </div>
                 </div>
             </div>
-            <div class="hero__small__image__container" v-if="page.sub_image">
+            <div class="hero__small__image__container" v-if="hero.sub_image">
                 <div class="hero__small__image__inner">
-                    <img :src="page.sub_image" alt="" class="hero__small__image">
+                    <img :src="hero.sub_image" alt="" class="hero__small__image">
                 </div>
             </div>
         </div>
@@ -39,7 +39,7 @@ export default {
         }
     },
     props: {
-        page: Object
+        hero: Object
     }
 }
 </script>
@@ -123,6 +123,7 @@ export default {
         line-height: 1em;
         font-weight: 500;
         margin: 10px 0 0;
+        text-align: left;
     }
     .hero h2 {
         font-size: 2em;
@@ -138,9 +139,14 @@ export default {
     }
     .hero__cta {
         margin: 36px 0 0;
+        display: flex;
+        flex-direction: row;
+        align-content: flex-start;
+        justify-content: flex-start;
     }
     .hero__cta__button {
         color: #FFF;
+        background-color: var(--dark-blue);
         padding: 14px 24px;
         text-decoration: none;
         text-transform: uppercase;
@@ -148,7 +154,7 @@ export default {
         border-radius: 5px;
         display: block;
         width: 280px;
-        margin: 0 auto;
+        margin: 0;
     }
     .hero__small__image__container {
         flex: 1 1 auto;

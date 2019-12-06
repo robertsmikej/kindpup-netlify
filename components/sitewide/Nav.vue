@@ -2,7 +2,7 @@
     <nav>
         <div class="nav__inner">
             <nuxt-link to="/" class="nav__logo">
-                <img :src="sitewide.site_logo.data.full_url" alt="" class="nav__logo__img">
+                <img :src="sitewide.logo" :alt="sitewide.name + '\'s Logo'" class="nav__logo__img">
             </nuxt-link>
             <div class="nav__links" :class="{showMobileNav: this.mobileNav}" @click="toggleMobileNav">
                 <nuxt-link v-for="(navitem, index) in nav" :key="index" class="nav__link" :to="navItemNormalize(navitem)">{{ navitem.title }}</nuxt-link>
@@ -23,9 +23,7 @@
 export default {
     computed: {
         nav: function () {
-            return this.$store.state.nav.filter(function (n) {
-                return n.status === 'published';
-            });
+            return this.$store.state.nav;
         },
         sitewide: function () {
             return this.$store.state.sitewide;
