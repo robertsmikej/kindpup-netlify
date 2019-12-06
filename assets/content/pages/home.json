@@ -3,6 +3,8 @@
   "hero": {
     "header": "DOG CBD",
     "para": "Para adshfa ahfser afgaefaer afad asdf adfasdga",
+    "button_text": "Investors",
+    "button_link": "/invest",
     "image": "/img/hero-back-2100.jpg"
   }
 }
