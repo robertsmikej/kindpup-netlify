@@ -1,11 +1,27 @@
 {
   "name": "Home",
   "hero": {
-    "header": "DOG CBD",
-    "para": "Para adshfa ahfser afgaefaer afad asdf adfasdga",
-    "button_text": "Investors",
-    "button_link": "/invest",
-    "image": "/img/hero-back-2100.jpg"
+    "slides": [
+      {
+        "header": "Investors",
+        "para": "",
+        "button_text": "Click For Info",
+        "button_link": "/invest",
+        "background_image": "/img/hero-back-2100.jpg"
+      },
+      {
+        "header": "Our Story",
+        "button_text": "Learn More",
+        "button_link": "/our-story",
+        "background_image": "/img/shepards.jpg"
+      },
+      {
+        "header": "Contact Us",
+        "button_text": "Click Here",
+        "button_link": "/contact",
+        "background_image": "/img/dogs-running.jpg"
+      }
+    ]
   },
   "page_section_1": {
     "shown": true,
