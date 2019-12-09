@@ -22,7 +22,21 @@ function sortItems(data) {
 export const mutations = {
     setPages(state, data) {
         for (var page in data) {
-            state.pages[data[page].slug] = data[page];
+            state.pages[data[page].page_name] = data[page];
+            let newsections = {};
+            for (var s in data[page].sections) {
+                var section = data[page].sections[s];
+                if (section) {
+                    var slug = section.name.toLowerCase().replace(/ /g, "_");
+                    section.slug = slug;
+                    newsections[slug] = section;
+                }
+            }
+            data[page].sections = newsections;
+        }
+        for (var page in data) {
+            
+            state.pages[data[page].name.toLowerCase()] = data[page];
         }
     },
     setNav(state, data) {

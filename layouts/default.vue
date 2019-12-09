@@ -66,8 +66,8 @@ html {
     flex-wrap: wrap;
     align-content: flex-start;
     justify-content: flex-start;
-    min-height: calc(100vh - 100px);
-    padding-top: 90px;
+    min-height: calc(100vh - 120px);
+    padding-top: 120px;
 }
 h1 {
     font-size: 3em;

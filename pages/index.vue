@@ -1,8 +1,8 @@
 <template>
   <section class="container">
-        <Hero :hero="page.hero"/>
+        <Hero :heroSlides="page.hero" :heroOptions="page.hero_options"/>
         <Signup/>
-        <SideBySide :section="page.page_section_1"/>
+        <SideBySide :section="page.sections.potential_benefits"/>
         <Grid/>
   </section>
 </template>

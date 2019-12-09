@@ -1,6 +1,28 @@
 <template>
-    <div class="hero" :class="{heroNoImage: this.noHeroImg}" :style="{background: 'url(' + hero.image + ')' }">
-        <div class="hero__overlay" v-if="!this.noHeroImg"></div>
+        <div class="hero">
+            <carousel :autoplay="heroOptions.autoplay" :loop="heroOptions.loop" :per-page="1" :mouse-drag="false" :pagination-padding="7" :autoplay-timeout="heroOptions.time_to_move" :pagination-active-color="'#FCA24D'" :speed="700">
+                <slide v-for="(slide, index) in heroSlides.slides" :key="index" class="hero__inner">
+                    <div v-if="slide.background_image" class="hero__background__image__container">
+                        <div class="hero__overlay"></div>
+                        <img :src="slide.background_image":alt="slide.header" class="hero__background__image"/>
+                    </div>
+                    <div class="hero__text__container">
+                        <div class="hero__text__inner">
+                            <h1>{{ slide.header }}</h1>
+                            <p>{{ slide.para }}</p>
+                            <div class="hero__cta" v-if="slide.button_text">
+                                <nuxt-link v-if="slide.button_link" :to="slide.button_link" :style="{backgroundColor:slide.button_color}" class="hero__cta__button">{{ slide.button_text }}</nuxt-link>
+                            </div>
+                        </div>
+                        <div class="hero__small__image__container" v-if="slide.sub_image">
+                            <div class="hero__small__image__inner">
+                                <img :src="slide.sub_image" :alt="slide.header" class="hero__small__image"/>
+                            </div>
+                        </div>
+                    </div>
+                </slide>
+            </carousel>
+        <!-- <div class="hero__overlay" v-if="!this.noHeroImg"></div>
         <div class="hero__inner">
             <div class="hero__text__container">
                 <div class="hero__text__inner">
@@ -16,14 +38,16 @@
                     <img :src="hero.sub_image" alt="" class="hero__small__image">
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 </template>
 
 <script>
+
 export default {
     props: {
-        hero: Object
+        heroSlides: Object,
+        heroOptions: Object
     },
     data() {
         return {
@@ -36,15 +60,8 @@ export default {
 <style>
     .hero {
         width: 100%;
-        min-height: 700px;
-        background-position: center top !important;
-        background-repeat: no-repeat !important;
-        background-size: cover !important;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        align-content: flex-start;
-        justify-content: center;
+        max-width: 1920px;
+        margin: 0 auto;
         position: relative;
     }
     .hero.heroNoImage {
@@ -60,39 +77,52 @@ export default {
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, .2);
+        background: rgba(0, 0, 0, 0.3);
         z-index: 2;
     }
     .heroNoImage .hero__overlay {
         display: none;
     }
     .hero__inner {
+        position: relative;
+    }
+    .hero__background__image__container {
         width: 100%;
         height: 100%;
-        z-index: 3;
         display: flex;
         flex-direction: row;
-        flex-wrap: nowrap;
         align-content: center;
-        justify-content: flex-start;
-        flex: 1;
+        justify-content: center;
+        align-items: center;
+    }
+    .hero__background__image {
+        width: 100%;
+        max-width: 1920px;
+        margin: 0;
+        flex: 1 0 auto;
+        height: 100%;
+        display: block;
     }
     .heroNoImage .hero__inner {
-        max-width: 1400px;
         margin: 0 auto;
         justify-content: space-around;
     }
     .hero__text__container {
-        margin: 0 10%;
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
         align-content: flex-start;
         justify-content: center;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        z-index: 3;
+        transform: translate(30%, -50%);
+        transition: all .5s;
     }
     .heroNoImage .hero__text__container {
         margin: 0;
-        flex: 1 1 auto;
+        /* flex: 1 1 auto; */
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -160,6 +190,16 @@ export default {
     }
     .hero__small__image__container img {
         max-width: 440px;
+    }
+    .VueCarousel-dot-container {
+        margin: 0 !important;
+    }
+    .VueCarousel-pagination {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        z-index: 3;
     }
     /* ------------------ MEDIA QUERY ------------------ */
     @media screen and (max-width: 1000px) {

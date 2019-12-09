@@ -86,32 +86,48 @@ collections:
       preview: false
     fields:
       - { label: 'Page Name', name: 'name', widget: 'string' }
-      - label: "Hero"
+      - label: "Hero Slides"
         name: "hero"
         widget: "object"
         fields:
-        - { label: 'Header', name: 'header', widget: 'string', required: false }
-        - { label: 'Para', name: 'para', widget: 'text', required: false }
-        - { label: 'Button Text', name: 'button_text', widget: 'string', required: false }
-        - { label: 'Button Link', name: 'button_link', widget: 'string', required: false }
-        - { label: 'Button Color', name: 'button_color', widget: 'string', required: false }
-        - { label: 'Image', name: 'image', widget: 'file', required: false }
-        - { label: 'Video', name: 'video', widget: 'file', required: false }
-        - { label: 'Sub Image', name: 'sub_image', widget: 'file', required: false }
-      - label: "Page Section 1"
-        name: "page_section_1"
+        - name: 'slides'
+          label: 'Slide'
+          widget: "list"
+          fields:
+          - { label: 'Header', name: 'header', widget: 'string', required: false }
+          - { label: 'Show Slide', name: 'status', widget: 'boolean', required: false }
+          - { label: 'Para', name: 'para', widget: 'text', required: false }
+          - { label: 'Button Text', name: 'button_text', widget: 'string', required: false }
+          - { label: 'Button Link', name: 'button_link', widget: 'string', required: false }
+          - { label: 'Button Color', name: 'button_color', widget: 'string', required: false }
+          - { label: 'Background Image', name: 'background_image', widget: 'file', required: false }
+          - { label: 'Video', name: 'video', widget: 'file', required: false }
+          - { label: 'Sub Image', name: 'sub_image', widget: 'file', required: false }
+      - label: "Hero Options"
+        name: "hero_options"
         widget: "object"
         fields:
-        - { label: "Shown", name: "shown", widget: "boolean", default: true, required: false }
-        - { label: 'Main Text', name: 'main_text', widget: 'markdown', required: false, buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list"] }
-        - { label: 'Image 1', name: 'image_1', widget: 'file', required: false }
-      - label: "Page Section 2"
-        name: "page_section_2"
-        widget: "object"
+        - { label: 'Auto Play?', name: 'autoplay', widget: 'boolean', required: false }
+        - { label: 'Time To Move', name: 'time_to_move', widget: 'number', required: false }
+        - { label: 'Loop?', name: 'loop', widget: 'boolean', required: false }
+      - label: "Page Sections"
+        name: "sections"
+        widget: "list"
+        slug: '{{name}}'
         fields:
-        - { label: "Shown", name: "shown", widget: "boolean", default: true, required: false }
-        - { label: 'Main Text', name: 'main_text', widget: 'markdown', required: false, buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list"] }
-        - { label: 'Image 1', name: 'image_1', widget: 'file', required: false }
+        - { label: 'Section Name', name: 'name', widget: 'string', required: true }
+        - { label: 'Show Section', name: 'status', widget: 'boolean', required: false }
+        - label: "Section Text"
+          name: "section_text"
+          widget: "list"
+          fields:
+          - { label: 'Text', name: 'text', widget: 'markdown', required: false, buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list"] }
+        - label: "Section Images"
+          name: "section_images"
+          widget: "list"
+          fields:
+            - { label: 'Image Name', name: 'name', widget: 'string', required: false }
+            - { label: 'Image', name: 'image', widget: 'file', required: false }
 
 
   - name: 'nav'
