@@ -1,0 +1,13 @@
+{
+  "name": "Store",
+  "hero": {
+    "slides": [
+      {
+        "header": "Store",
+        "status": true,
+        "para": "See Our Line of Pet CBD Products Below!",
+        "background_image": "/img/hero-back-2100.jpg"
+      }
+    ]
+  }
+}
