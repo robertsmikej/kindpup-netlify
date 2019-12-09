@@ -28,9 +28,17 @@
   },
   "sections": [
     {
+      "name": "Potential Benefits",
+      "status": true,
       "section_text": [
         {
           "text": "## Potential Benefits of Doggy CBD\n\n### There may be more than you think!\n\n* Improving general wellness and health\n* Reducing inflammation\n* Increasing muscle repair after strenuous exercise\n* Improving circulation\n* Promoting bone growth\n* Reducing pain\n* Reducing stress and anxiety (including separation anxiety)\n* Reducing nausea\n* Stimulating appetite\n* Lowering blood sugar levels\n* Minimizing aggression disorders and noise phobias\n* Combating degenerative diseases and aging\n* Increasing cognitive function\n* Reducing or helping to control seizures\n* Inhibiting cancer cell growth"
+        }
+      ],
+      "section_imges": [
+        {
+          "name": "Pug Doggy In Window",
+          "image": "/img/pugikins-window.jpg"
         }
       ]
     }
