@@ -26,6 +26,11 @@
       }
     ]
   },
+  "hero_options": {
+    "autoplay": true,
+    "time_to_move": 4000,
+    "loop": true
+  },
   "sections": [
     {
       "name": "Potential Benefits",
