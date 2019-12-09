@@ -1,10 +1,25 @@
 {
   "name": "Contact",
   "hero": {
-    "header": "Contact Us",
-    "para": "Please feel free to contact us for any reason using the form below.",
-    "image": "/img/shepards.jpg"
+    "slides": [
+      {
+        "header": "Contact Us",
+        "status": true,
+        "background_image": "/img/dogs-running.jpg"
+      }
+    ]
   },
+  "sections": [
+    {
+      "name": "Fill OutForm",
+      "status": true,
+      "section_text": [
+        {
+          "text": "Please fill out the form below to contact us"
+        }
+      ]
+    }
+  ],
   "page_section_1": {
     "shown": false
   }
