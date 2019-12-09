@@ -11,7 +11,7 @@
   },
   "sections": [
     {
-      "name": "Fill OutForm",
+      "name": "Fill Out Form",
       "status": true,
       "section_text": [
         {
@@ -19,8 +19,5 @@
         }
       ]
     }
-  ],
-  "page_section_1": {
-    "shown": false
-  }
+  ]
 }
