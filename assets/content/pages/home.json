@@ -4,6 +4,7 @@
     "slides": [
       {
         "header": "Investors",
+        "status": true,
         "para": "",
         "button_text": "Click For Info",
         "button_link": "/invest",
@@ -11,18 +12,29 @@
       },
       {
         "header": "Our Story",
+        "status": true,
         "button_text": "Learn More",
         "button_link": "/our-story",
         "background_image": "/img/shepards.jpg"
       },
       {
         "header": "Contact Us",
+        "status": true,
         "button_text": "Click Here",
         "button_link": "/contact",
         "background_image": "/img/dogs-running.jpg"
       }
     ]
   },
+  "sections": [
+    {
+      "section_text": [
+        {
+          "text": "## Potential Benefits of Doggy CBD\n\n### There may be more than you think!\n\n* Improving general wellness and health\n* Reducing inflammation\n* Increasing muscle repair after strenuous exercise\n* Improving circulation\n* Promoting bone growth\n* Reducing pain\n* Reducing stress and anxiety (including separation anxiety)\n* Reducing nausea\n* Stimulating appetite\n* Lowering blood sugar levels\n* Minimizing aggression disorders and noise phobias\n* Combating degenerative diseases and aging\n* Increasing cognitive function\n* Reducing or helping to control seizures\n* Inhibiting cancer cell growth"
+        }
+      ]
+    }
+  ],
   "page_section_1": {
     "shown": true,
     "main_text": "## Potential Benefits of Doggy CBD\n\n### There may be more than you think!\n\n* Improving general wellness and health\n* Reducing inflammation\n* Increasing muscle repair after strenuous exercise\n* Improving circulation\n* Promoting bone growth\n* Reducing pain\n* Reducing stress and anxiety (including separation anxiety)\n* Reducing nausea\n* Stimulating appetite\n* Lowering blood sugar levels\n* Minimizing aggression disorders and noise phobias\n* Combating degenerative diseases and aging\n* Increasing cognitive function\n* Reducing or helping to control seizures\n* Inhibiting cancer cell growth",
