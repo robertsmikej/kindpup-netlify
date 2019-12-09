@@ -1,10 +1,30 @@
 {
   "name": "Invest",
   "hero": {
-    "header": "Ready To Invest?",
-    "para": "Learn more about our company and its vision below.",
-    "image": "/img/canadian-rockies.jpg"
+    "slides": [
+      {
+        "header": "Investors",
+        "status": true,
+        "para": "Ready To Invest? Fill out the form below to see how you could be making big money, and soon!",
+        "background_image": "/img/canadian-rockies.jpg"
+      }
+    ]
   },
+  "sections": [
+    {
+      "section_text": [
+        {
+          "text": "### Get Our Investor Presentation Below\n\nThis paragraph is totally stolen. Fill out this form to be emailed our investor presentation which includes an overview of our business vision, overall market strategy, brand platform, management team and more."
+        }
+      ],
+      "section_imges": [
+        {
+          "name": "Group Presentation",
+          "image": "/img/group_presentation.png"
+        }
+      ]
+    }
+  ],
   "page_section_1": {
     "shown": true,
     "main_text": "### Get Our Investor Presentation Below\n\nThis paragraph is totally stolen. Fill out this form to be emailed our investor presentation which includes an overview of our business vision, overall market strategy, brand platform, management team and more.",
