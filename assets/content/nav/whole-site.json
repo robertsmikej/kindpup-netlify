@@ -1,0 +1,34 @@
+{
+  "title": "Whole Site",
+  "status": true,
+  "nav_items": [
+    {
+      "title": "Home",
+      "status": true,
+      "link": "/"
+    },
+    {
+      "title": "Shop",
+      "status": true,
+      "link": "/store"
+    },
+    {
+      "title": "Invest",
+      "status": true,
+      "link": "/invest"
+    },
+    {
+      "title": "Our Story",
+      "status": true,
+      "link": "/our-story"
+    },
+    {
+      "title": "Contact",
+      "status": true,
+      "link": "/contact"
+    }
+  ],
+  "shown": true,
+  "sort": 1,
+  "link": "ad"
+}
