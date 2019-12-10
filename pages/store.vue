@@ -3,7 +3,7 @@
         <Hero :heroSlides="page.hero" :heroOptions="page.hero_options"/>
         <div class="store__container">
             <!-- <div id='collection-component-1575936425585'></div> -->
-            <div :id="'collection-component-' + page.comp_code"></div>
+            <div :id="'collection-component-' + sitewide.comp_code"></div>
         </div>
     </section>
 </template>
@@ -19,6 +19,9 @@ export default {
     computed: {
         page: function () {
             return this.$store.state.pages.store
+        },
+        sitewide: function () {
+            return this.$store.state.sitewide;
         }
     },
     data() {
@@ -29,9 +32,9 @@ export default {
     },
     head () {
         return {
-            script: [
-                { src: 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js' }
-            ],
+            // script: [
+            //     { src: 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js' }
+            // ],
             title: "Kind Pup | Store",
             meta: [
                 { 
@@ -44,11 +47,13 @@ export default {
         }
     },
     created() {
-        const code = this.page.page_code;
-        if (process.browser){
-            if (code.indexOf("function ShopifyBuyInit() {") >= 0) {
-                this.storeScript = code.split("function ShopifyBuyInit() {")[1].split("})();")[0];
-            }
+        const code = this.sitewide.page_code;
+
+        if (process.browser) {
+                if (code.indexOf("function ShopifyBuyInit() {") >= 0) {
+                    this.storeScript = code.split("function ShopifyBuyInit() {")[1].split("})();")[0];
+                }
+            
 
     var client = ShopifyBuy.buildClient({
       domain: 'kind-pup.myshopify.com',

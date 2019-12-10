@@ -74,6 +74,8 @@ collections:
           - {label: "Placeholder", name: "placeholder", widget: "string"}
           - {label: "Field Type", name: "type", widget: "string"}
         - {label: "Submit Button Text", name: "button_text", widget: "string"}
+      - { label: 'Store Component Number', name: 'comp_code', widget: 'string' }
+      - { label: 'Site Code', name: 'page_code', widget: 'text' }
 
   - name: 'pages'
     label: 'Pages'

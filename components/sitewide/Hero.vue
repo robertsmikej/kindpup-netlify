@@ -62,7 +62,6 @@ export default {
         singleHero: function () {
             if (this.heroSlides.slides.length <= 1) {
                 for (var slide in this.heroSlides.slides) {
-                    console.log(slide);
                     return this.heroSlides.slides[0];
                 }
             }

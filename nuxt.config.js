@@ -13,6 +13,9 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ],
+    script: [
+      { src: 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js' }
     ]
   },
   /*
@@ -28,7 +31,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    { src: '~/plugins/vue-carousel.js', mode: "client" }
+    { src: '~/plugins/vue-carousel.js', mode: "client", ssr: false }
   ],
   /*
   ** Nuxt.js dev-modules
@@ -51,4 +54,4 @@ export default {
   build: {
 
   }
-}
+};
