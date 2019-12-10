@@ -1,0 +1,31 @@
+{
+  "name": "Our Story",
+  "hero": {
+    "slides": [
+      {
+        "header": "Our Story",
+        "status": true,
+        "para": "See how we got where we are today.",
+        "background_image": "/img/canadian-rockies.jpg"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "name": "Head Text",
+      "status": true,
+      "section_text": [
+        {
+          "text": "## We Love Our Pets\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        }
+      ],
+      "section_images": [
+        {
+          "name": "Man With Dog",
+          "image": "/img/manwithdog.jpg"
+        }
+      ]
+    }
+  ],
+  "meta_description": "Our Story - Come see how we got where we are!"
+}
