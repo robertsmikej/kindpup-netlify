@@ -1,9 +1,9 @@
 <template>
   <section class="container">
-        <!-- <Hero :heroSlides="page.hero" :heroOptions="page.hero_options"/> -->
-        <Signup/>
-        <SideBySide :section="page.sections.potential_benefits"/>
-        <Grid/>
+        <Hero :heroSlides="page.hero" :heroOptions="page.hero_options"/>
+        <!-- <Signup/>
+        <SideBySide :section="page.sections.potential_benefits"/> -->
+        <!-- <Grid/> -->
   </section>
 </template>
 
