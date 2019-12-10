@@ -1,7 +1,7 @@
 <template>
     <div class="hero">
         <div v-if="heroSlides.slides.length > 1">
-            <no-ssr>
+            <!-- <client-only>
                 <carousel :autoplay="heroOptions.autoplay" :loop="heroOptions.loop" :per-page="1" :mouse-drag="false" :pagination-padding="7" :autoplay-timeout="heroOptions.time_to_move" :pagination-active-color="'#FCA24D'" :speed="700">
                     <slide v-for="(slide, index) in heroSlides.slides" :key="index" class="hero__inner">
                         <div v-if="slide.background_image" class="hero__background__image__container">
@@ -24,7 +24,7 @@
                         </div>
                     </slide>
                 </carousel>
-            </no-ssr>
+            </client-only> -->
         </div>
         <div v-else-if="heroSlides.slides.length <= 1 || this.noHeroImg">
             <div class="hero__inner">
