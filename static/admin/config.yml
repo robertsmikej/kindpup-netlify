@@ -131,8 +131,6 @@ collections:
             - { label: 'Image Name', name: 'name', widget: 'string', required: false }
             - { label: 'Image', name: 'image', widget: 'file', required: false }
       - { label: 'Meta Description', name: 'meta_description', widget: 'string' }
-      - { label: 'Component Code', name: 'comp_code', widget: 'string' }
-      - { label: 'Page Code', name: 'page_code', widget: 'text' }
 
 
   - name: 'nav'

@@ -50,9 +50,9 @@ export default {
         const code = this.sitewide.page_code;
 
         if (process.browser) {
-                if (code.indexOf("function ShopifyBuyInit() {") >= 0) {
-                    this.storeScript = code.split("function ShopifyBuyInit() {")[1].split("})();")[0];
-                }
+                // if (code.indexOf("function ShopifyBuyInit() {") >= 0) {
+                //     this.storeScript = code.split("function ShopifyBuyInit() {")[1].split("})();")[0];
+                // }
             
 
     var client = ShopifyBuy.buildClient({
