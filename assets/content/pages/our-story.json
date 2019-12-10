@@ -25,7 +25,15 @@
           "image": "/img/manwithdog.jpg"
         }
       ]
+    },
+    {
+      "name": "Section 2",
+      "status": true,
+      "section_text": [
+        {
+          "text": "asdfa adsf a ad fasd fad asd fasdf asd fa aaasdfa dsf a"
+        }
+      ]
     }
-  ],
-  "meta_description": "Our Story - Come see how we got where we are!"
+  ]
 }
