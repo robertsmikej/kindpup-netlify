@@ -1,4 +1,3 @@
-
 export default {
   mode: 'universal',
   /*
@@ -31,7 +30,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    { src: '~/plugins/vue-carousel.js', mode: "client", ssr: false }
+    { src: '~/plugins/vue-carousel', ssr: false }
   ],
   /*
   ** Nuxt.js dev-modules
@@ -41,6 +40,7 @@ export default {
   /*
   ** Nuxt.js modules
   */
+ 
   modules: [
     // Doc: https://github.com/nuxt-community/axios-module#usage
     '@nuxtjs/markdownit'
@@ -52,6 +52,6 @@ export default {
   ** Build configuration
   */
   build: {
-
+    
   }
 };
