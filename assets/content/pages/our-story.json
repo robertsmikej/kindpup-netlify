@@ -12,6 +12,15 @@
   },
   "sections": [
     {
+      "name": "Section 2",
+      "status": true,
+      "section_text": [
+        {
+          "text": "asdfa adsf a ad fasd fad asd fasdf asd fa aaasdfa dsf a"
+        }
+      ]
+    },
+    {
       "name": "Head Text",
       "status": true,
       "section_text": [
@@ -23,15 +32,6 @@
         {
           "name": "Man With Dog",
           "image": "/img/manwithdog.jpg"
-        }
-      ]
-    },
-    {
-      "name": "Section 2",
-      "status": true,
-      "section_text": [
-        {
-          "text": "asdfa adsf a ad fasd fad asd fasdf asd fa aaasdfa dsf a"
         }
       ]
     }
