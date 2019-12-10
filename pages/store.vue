@@ -3,9 +3,7 @@
         <Hero :heroSlides="page.hero" :heroOptions="page.hero_options"/>
         <div class="store__container">
             <!-- <div id='collection-component-1575936425585'></div> -->
-            <div :id="'collection-component-' + componentID"></div>
-
-
+            <div :id="'collection-component-' + page.comp_code"></div>
         </div>
     </section>
 </template>
@@ -18,7 +16,6 @@ export default {
         Hero
         
     },
-
     computed: {
         page: function () {
             return this.$store.state.pages.store
@@ -47,21 +44,13 @@ export default {
         }
     },
     created() {
-        console.log(this.page.page_code);
         const code = this.page.page_code;
         if (process.browser){
-            let newcode;
-            if (code.indexOf("collection-component-") >= 0) {
-                let componentID = code.split("'")[1].replace("collection-component-", "");
-                this.componentID = componentID;
-            }
             if (code.indexOf("function ShopifyBuyInit() {") >= 0) {
-                newcode = code.split("function ShopifyBuyInit() {")[1].split("})();")[0];
-                this.storeScript = newcode;
+                this.storeScript = code.split("function ShopifyBuyInit() {")[1].split("})();")[0];
             }
-            
 
-            var client = ShopifyBuy.buildClient({
+    var client = ShopifyBuy.buildClient({
       domain: 'kind-pup.myshopify.com',
       storefrontAccessToken: '29db04f742abd5d9d37a142e6771695c',
     });

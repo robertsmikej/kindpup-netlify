@@ -129,6 +129,7 @@ collections:
             - { label: 'Image Name', name: 'name', widget: 'string', required: false }
             - { label: 'Image', name: 'image', widget: 'file', required: false }
       - { label: 'Meta Description', name: 'meta_description', widget: 'string' }
+      - { label: 'Component Code', name: 'comp_code', widget: 'string' }
       - { label: 'Page Code', name: 'page_code', widget: 'text' }
 
 
@@ -154,36 +155,3 @@ collections:
       - { label: 'Link', name: 'link', widget: 'string' }
       - { label: 'Para', name: 'para', widget: 'text', required: false }
       - { label: 'Icon', name: 'icon', widget: 'file', required: false }
-
-  - name: 'products'
-    label: 'Products'
-    identifier_field: name
-    format: 'json'
-    folder: 'assets/content/products'
-    create: true
-    slug: '{{slug}}'
-    editor:
-      preview: false
-    fields:
-      - { label: 'Product Name', name: 'name', widget: 'string' }
-      - { label: "Shown", name: "shown", widget: "boolean", default: true, required: false }
-      - { label: 'Icon', name: 'icon', widget: 'file', required: false }
-      - { label: 'Description', name: 'description', widget: 'markdown', required: false, buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list"] }
-      - label: "Sizes"
-        name: "sizes"
-        widget: "list"
-        fields:
-          - { label: 'Size Name', name: 'size_name', widget: 'string', required: false }
-          - label: "Weights"
-            name: "weights"
-            widget: "object"
-            fields:
-            - { label: 'Ounces', name: 'ounces', widget: 'number', required: false }
-          - label: "Demensions"
-            name: "demensions"
-            widget: "object"
-            fields:
-            - { label: 'Width in Inches', name: 'width', widget: 'number', required: false }
-            - { label: 'Height in Inches', name: 'height', widget: 'number', required: false }
-            - { label: 'Depth in Inches', name: 'depth', widget: 'number', required: false }
-      - { label: 'Link', name: 'link', widget: 'string' }
