@@ -48,7 +48,7 @@ export default {
         }
     },
     created() {
-        const code = this.sitewide.page_code;
+        const code = this.sitewide.site_code.page_code;
 
         if (process.browser) {
                 // if (code.indexOf("function ShopifyBuyInit() {") >= 0) {

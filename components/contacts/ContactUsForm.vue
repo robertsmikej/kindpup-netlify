@@ -1,35 +1,37 @@
 <template>
     <div class="contact__form__container">
-        <form id="contact__form" data-netlify="true" name="Contact-Us-Page" class="contact__us__form" action="/thanks" method="post" @submit.prevent="handleSubmit">
-            <input type="hidden" name="Contact-Us-Page" value="Contact Us Page Submission" />
-            <div v-for="(input, index) in formDetails.items" :key="index">
-                <FormInput :input="input"/>
-            </div>
-            
-            <!-- <fieldset>
-                <p>Full Name</p>
-                <input aria-label="Full Name" name="name" placeholder="Eg. Jogn Manchild" type="text" v-model="formData.name" required autofocus>
-            </fieldset>
-            <fieldset>
-                <p>Company Name</p>
-                <input aria-label="Company" name="company" placeholder="Eg. Pet Inc." type="text" v-model="formData.company">
-            </fieldset> -->
-            <fieldset>
-                <p>Email</p>
-                <input aria-label="Email Address" name="email" placeholder="Eg. petlover@petinc.com" type="email" v-model="formData.email" required>
-            </fieldset>
-            <fieldset>
-                <p>Phone</p>
-                <input aria-label="Phone Number" name="phone" placeholder="Eg. 1(208)555-5309" type="phone" v-model="formData.phone">
-            </fieldset>
-            <fieldset>
-                <p>{{ messageText }}</p>
-                <textarea aria-label="Message To Us" name="message" rows="4" v-model="formData.message"></textarea>
-            </fieldset> 
-            <fieldset>
-                <button class="submit__button contact__us__submit js__contact__submit" data-submit="Sending">{{ formDetails.button_text }}</button>
-            </fieldset>
-        </form>
+        <client-only>
+            <form id="contact__form" data-netlify="true" name="Contact-Us-Page" class="contact__us__form" action="/thanks" method="post" @submit.prevent="handleSubmit">
+                <input type="hidden" name="Contact-Us-Page" value="Contact Us Page Submission" />
+                <div v-for="(input, index) in formDetails.items" :key="index">
+                    <FormInput :input="input"/>
+                </div>
+                
+                <!-- <fieldset>
+                    <p>Full Name</p>
+                    <input aria-label="Full Name" name="name" placeholder="Eg. Jogn Manchild" type="text" v-model="formData.name" required autofocus>
+                </fieldset>
+                <fieldset>
+                    <p>Company Name</p>
+                    <input aria-label="Company" name="company" placeholder="Eg. Pet Inc." type="text" v-model="formData.company">
+                </fieldset> -->
+                <fieldset>
+                    <p>Email</p>
+                    <input aria-label="Email Address" name="email" placeholder="Eg. petlover@petinc.com" type="email" v-model="formData.email" required>
+                </fieldset>
+                <fieldset>
+                    <p>Phone</p>
+                    <input aria-label="Phone Number" name="phone" placeholder="Eg. 1(208)555-5309" type="phone" v-model="formData.phone">
+                </fieldset>
+                <fieldset>
+                    <p>{{ messageText }}</p>
+                    <textarea aria-label="Message To Us" name="message" rows="4" v-model="formData.message"></textarea>
+                </fieldset> 
+                <fieldset>
+                    <button class="submit__button contact__us__submit js__contact__submit" data-submit="Sending">{{ formDetails.button_text }}</button>
+                </fieldset>
+            </form>
+        </client-only>
     </div>
 </template>
 
