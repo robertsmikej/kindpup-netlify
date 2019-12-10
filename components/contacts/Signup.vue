@@ -3,9 +3,9 @@
         <div class="sign__up__text__container" v-if="signup.text" v-html="$md.render(signup.text)"></div>
         <div class="sign__up__input__container" v-if="signup.button_text">
             <form id="contact__form" data-netlify="true" name="Email-Signup" class="sign__up__form" action="/thanks" method="post">
-                <input type="hidden" name="Email-Signup" value="Sign Up Box Submission" />
+                <input type="hidden" name="Email-Signup" value="Sign Up Box Submission"/>
                 <input aria-label="Email Address" name="email" placeholder="Eg. kindpup@gmail.com" type="email" v-model="signUpFormData.email" required class="sign__up__input"/>
-                <button data-submit="Sending" class="sign__up__button">{{ signup.button_text }}</button>
+                <button class="sign__up__button">{{ signup.button_text }}</button>
             </form>
         </div>
     </div>
@@ -29,15 +29,15 @@ export default {
         }
     },
     methods: {
-        handleSubmit: function () {
-            let emaildata = JSON.stringify({
-                email_address: this.signUpFormData.email,
-                list_type: this.signUpFormData.list_type
-            });
-            this.$axios.post('/', emaildata).then(function(Response) {
-                console.log(Response);
-            });
-        }
+        // handleSubmit: function () {
+        //     let emaildata = JSON.stringify({
+        //         email_address: this.signUpFormData.email,
+        //         list_type: this.signUpFormData.list_type
+        //     });
+        //     this.$axios.post('/', emaildata).then(function(Response) {
+        //         console.log(Response);
+        //     });
+        // }
     },
     head () {
         return {
