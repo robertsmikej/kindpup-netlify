@@ -1,28 +1,30 @@
 <template>
     <div class="hero">
         <div v-if="heroSlides.slides.length > 1">
-            <carousel :autoplay="heroOptions.autoplay" :loop="heroOptions.loop" :per-page="1" :mouse-drag="false" :pagination-padding="7" :autoplay-timeout="heroOptions.time_to_move" :pagination-active-color="'#FCA24D'" :speed="700">
-                <slide v-for="(slide, index) in heroSlides.slides" :key="index" class="hero__inner">
-                    <div v-if="slide.background_image" class="hero__background__image__container">
-                        <div class="hero__overlay"></div>
-                        <img :src="slide.background_image" :alt="slide.header" class="hero__background__image"/>
-                    </div>
-                    <div class="hero__text__container">
-                        <div class="hero__text__inner">
-                            <h1>{{ slide.header }}</h1>
-                            <p>{{ slide.para }}</p>
-                            <div class="hero__cta" v-if="slide.button_text">
-                                <nuxt-link v-if="slide.button_link" :to="slide.button_link" :style="{backgroundColor:slide.button_color}" class="hero__cta__button">{{ slide.button_text }}</nuxt-link>
+            <client-only>
+                <carousel :autoplay="heroOptions.autoplay" :loop="heroOptions.loop" :per-page="1" :mouse-drag="false" :pagination-padding="7" :autoplay-timeout="heroOptions.time_to_move" :pagination-active-color="'#FCA24D'" :speed="700">
+                    <slide v-for="(slide, index) in heroSlides.slides" :key="index" class="hero__inner">
+                        <div v-if="slide.background_image" class="hero__background__image__container">
+                            <div class="hero__overlay"></div>
+                            <img :src="slide.background_image" :alt="slide.header" class="hero__background__image"/>
+                        </div>
+                        <div class="hero__text__container">
+                            <div class="hero__text__inner">
+                                <h1>{{ slide.header }}</h1>
+                                <p>{{ slide.para }}</p>
+                                <div class="hero__cta" v-if="slide.button_text">
+                                    <nuxt-link v-if="slide.button_link" :to="slide.button_link" :style="{backgroundColor:slide.button_color}" class="hero__cta__button">{{ slide.button_text }}</nuxt-link>
+                                </div>
+                            </div>
+                            <div class="hero__small__image__container" v-if="slide.sub_image">
+                                <div class="hero__small__image__inner">
+                                    <img :src="slide.sub_image" :alt="slide.header" class="hero__small__image"/>
+                                </div>
                             </div>
                         </div>
-                        <div class="hero__small__image__container" v-if="slide.sub_image">
-                            <div class="hero__small__image__inner">
-                                <img :src="slide.sub_image" :alt="slide.header" class="hero__small__image"/>
-                            </div>
-                        </div>
-                    </div>
-                </slide>
-            </carousel>
+                    </slide>
+                </carousel>
+            </client-only>
         </div>
         <div v-else-if="heroSlides.slides.length <= 1 || this.noHeroImg">
             <div class="hero__inner">
@@ -77,7 +79,6 @@ export default {
 <style>
     .hero {
         width: 100%;
-        max-width: 1920px;
         margin: 0 auto;
         position: relative;
     }
@@ -114,7 +115,6 @@ export default {
     }
     .hero__background__image {
         width: 100%;
-        max-width: 1920px;
         margin: 0;
         flex: 1 0 auto;
         height: 100%;
