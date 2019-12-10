@@ -98,4 +98,15 @@ export default {
         cursor: pointer;
         border: none;
     }
+    /* ------------------ MEDIA QUERY ------------------ */
+    @media screen and (max-width: 600px) {
+        .sign__up__container {
+            min-height: 180px;
+        }
+        .sign__up__container h3 {
+            margin: 0 auto 10px;
+            font-size: 1.1em;
+            line-height: 1em;
+        }
+    }
 </style>

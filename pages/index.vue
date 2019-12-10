@@ -1,17 +1,17 @@
 <template>
-  <section class="container">
+    <main>
         <Hero :heroSlides="page.hero" :heroOptions="page.hero_options"/>
         <Signup/>
-        <SideBySide :section="page.sections.potential_benefits"/>
+        <SideBySide :section="page.sections[0]"/>
         <Grid/>
-  </section>
+    </main>
 </template>
 
 <script>
 import Hero from '~/components/sitewide/Hero.vue'
 import Signup from '~/components/contacts/Signup.vue'
-import Grid from '~/components/Grid.vue'
-import SideBySide from '~/components/SideBySide.vue'
+import Grid from '~/components/content/Grid.vue'
+import SideBySide from '~/components/content/SideBySide.vue'
 
 export default {
     components: {

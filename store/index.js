@@ -9,13 +9,11 @@ function sortItems(data) {
     for (var d in data) {
         let keys = Object.keys(newdata);
         let item = data[d];
-        if (item.shown || item.status === 'published' && item.sort_number !== null) {
+        //if (item.shown || item.status || item.status === 'published' && item.sort_number !== null) {
+        if (item.shown || item.status || item.status === 'published') {
             newdata.push(item);
         }
     }
-    newdata.sort(function (a, b) {
-        return a.sort - b.sort;
-    });
     return newdata;
 }
 
@@ -23,24 +21,15 @@ export const mutations = {
     setPages(state, data) {
         for (var page in data) {
             state.pages[data[page].page_name] = data[page];
-            let newsections = {};
-            for (var s in data[page].sections) {
-                var section = data[page].sections[s];
-                if (section) {
-                    var slug = section.name.toLowerCase().replace(/ /g, "_");
-                    section.slug = slug;
-                    newsections[slug] = section;
-                }
-            }
-            data[page].sections = newsections;
         }
         for (var page in data) {
-            
-            state.pages[data[page].name.toLowerCase()] = data[page];
+            state.pages[data[page].slug.toLowerCase().replace(/ /g, "_").replace(/-/g, "_")] = data[page];
         }
     },
     setNav(state, data) {
-        state.nav = sortItems(data);
+        var checkLive = sortItems(data);
+        var populate = checkLive[0].nav_items;
+        state.nav = populate;
     },
     setSitewide(state, data) {
         state.sitewide = data[0];

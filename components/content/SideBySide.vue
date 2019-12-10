@@ -1,5 +1,5 @@
 <template>
-    <div class="side__by__side">
+    <div class="site__section side__by__side">
         <div class="sbs__img__container" v-if="section.section_images[0].image">
             <div class="sbs__img__container__inner" :style="{backgroundImage: 'url(' + section.section_images[0].image  + ')' }"></div>
         </div>
@@ -33,14 +33,13 @@ export default {
         width: 100%;
         height: 100%;
         overflow: hidden;
-        background-size: cover;
-        background-position: right center;
+        background-size: contain;
+        background-position: center center;
         background-repeat: no-repeat;
     }
     .sbs__text__container {
         order: 2;
         flex: 1 1 50%;
-        
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
@@ -90,7 +89,10 @@ export default {
             height: 40vh;
         }
         .sbs__text__container {
-            padding: 8vh 10px 8vh;
+            padding: 4vh 10px;
+        }
+        .sbs__text__inner {
+            padding: 0 40px;
         }
         .sbs__text__inner h2 {
             margin: 0 auto 14px;
@@ -107,6 +109,18 @@ export default {
         .sbs__text__inner li {
             font-size: 1.1em;
             line-height: 1.1em;
+        }
+    }
+    /* ------------------ MEDIA QUERY ------------------ */
+    @media screen and (max-width: 450px) {
+        .sbs__text__container {
+            padding: 4vh 0;
+        }
+        .sbs__text__inner {
+            padding: 0;
+        }
+        .sbs__text__inner h2 {
+            font-size: 1.6em;
         }
     }
 </style>

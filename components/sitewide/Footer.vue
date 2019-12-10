@@ -24,6 +24,7 @@ export default {
 <style>
     footer {
         width: 100%;
+        margin-top: 7vw;
         padding: 50px 20px;
         background-color: #485458;
         z-index: 6;

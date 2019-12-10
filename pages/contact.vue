@@ -1,11 +1,11 @@
 <template>
-    <section class="container">
+    <main>
         <Hero :heroSlides="page.hero" :heroOptions="page.hero_options"/>
-        <div class="contact__page__form__container">
+        <div class="site__section contact__page__form__container">
             <h3 class="contact__form__header">Please fill out the form below to contact us</h3>
             <ContactUs :contactCompany="false" :messageText="'How Can We Help?'"/>
         </div>
-    </section>
+    </main>
 </template>
 
 <script>
@@ -42,7 +42,6 @@ export default {
 
 <style>
 .contact__page__form__container {
-    padding: 0vh 20px;
     max-width: 800px;
     margin: 50px auto;
     display: flex;
@@ -56,5 +55,14 @@ export default {
     margin: 0 0 30px;
     font-size: 1.4em;
     line-height: 1.4em;
+}
+/* ------------------ MEDIA QUERY ------------------ */
+@media screen and (max-width: 600px) {
+    .contact__form__header {
+        color: #FCA24D;
+        margin: 0 0 10px;
+        font-size: 1.1em;
+        line-height: 1em;
+    }
 }
 </style>

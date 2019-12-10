@@ -1,8 +1,8 @@
 <template>
     <div>
-        <Creeper v-if="sitewide.creeper_bar.shown"/>
+        <Creeper v-if="sitewide.creeper_bar.status"/>
         <Nav/>
-        <nuxt/>
+        <nuxt class="container"/>
         <Footer/>
     </div>
 </template>
@@ -66,8 +66,14 @@ html {
     flex-wrap: wrap;
     align-content: flex-start;
     justify-content: flex-start;
-    min-height: calc(100vh - 120px);
-    padding-top: 120px;
+    min-height: calc(100vh - 110px);
+    padding-top: 110px;
+}
+.site__section {
+    width: 100%;
+    max-width: 1300px;
+    margin: 7vw auto 0;
+    padding: 0 12px;
 }
 h1 {
     font-size: 3em;
@@ -97,10 +103,18 @@ p {
     font-size: 1em;
     line-height: 1.4em;
 }
+
+
 /* ------------------ MEDIA QUERY ------------------ */
 @media screen and (max-width: 900px) {
     .container {
-        padding-top: 60px;
+        padding-top: 90px;
+    }
+}
+/* ------------------ MEDIA QUERY ------------------ */
+@media screen and (max-width: 500px) {
+    .site__section {
+        margin: 12vw auto 0;
     }
 }
 </style>

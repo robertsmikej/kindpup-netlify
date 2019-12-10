@@ -34,7 +34,7 @@ collections:
         name: "creeper_bar"
         widget: "object"
         fields:
-        - { label: "Shown", name: "shown", widget: "boolean", default: true, required: false }
+        - { label: "Shown", name: "status", widget: "boolean", default: true, required: false }
         - { label: 'Text', name: 'text', widget: 'string', required: false }
         - { label: 'Link', name: 'link', widget: 'string', required: false }
       - label: "Sign Up Boxes"
@@ -134,7 +134,13 @@ collections:
           fields:
             - { label: 'Image Name', name: 'name', widget: 'string', required: false }
             - { label: 'Image', name: 'image', widget: 'file', required: false }
-      - { label: 'Meta Description', name: 'meta_description', widget: 'string' }
+      - label: "Meta Tags"
+        name: "meta"
+        widget: "object"
+        fields:
+        - { label: 'Page Title', name: 'title', widget: 'string', required: false }
+        - { label: 'Page Description', name: 'description', widget: 'string', required: false }
+        - { label: 'Show Page On Google?', name: 'status', widget: 'boolean', required: false }
 
 
   - name: 'nav'
@@ -147,15 +153,13 @@ collections:
     editor:
       preview: false
     fields:
-      - { label: "Shown", name: "shown", widget: "boolean", default: true, required: false }
-      - label: "Sort Number"
-        name: "sort"
-        widget: "number"
-        default: 1
-        valueType: "int"
-        min: 1
-        max: 20
       - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Link', name: 'link', widget: 'string' }
-      - { label: 'Para', name: 'para', widget: 'text', required: false }
-      - { label: 'Icon', name: 'icon', widget: 'file', required: false }
+      - { label: "All Nav Shown", name: "status", widget: "boolean", default: true, required: false }
+      - label: "Nav Items"
+        name: "nav_items"
+        widget: "list"
+        fields:
+        - { label: 'Title', name: 'title', widget: 'string' }
+        - { label: "Shown", name: "status", widget: "boolean", default: true, required: false }
+        - { label: 'Link', name: 'link', widget: 'string' }
+      

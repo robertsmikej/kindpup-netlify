@@ -1,19 +1,21 @@
 <template>
-    <section class="container">
+    <main>
         <Hero :heroSlides="page.hero" :heroOptions="page.hero_options"/>
-        <div class="store__container">
-            <!-- <div id='collection-component-1575936425585'></div> -->
+        <SectionHeader :header="page.sections[0].section_text[0].text"/>
+        <div class="site__section store__container">
             <div :id="'collection-component-' + sitewide.site_code.comp_code"></div>
         </div>
-    </section>
+    </main>
 </template>
 
 <script>
 import Hero from '~/components/sitewide/Hero.vue'
+import SectionHeader from '~/components/content/SectionHeader.vue'
 
 export default {
     components: {
-        Hero
+        Hero,
+        SectionHeader
     },
     props: {
         html: {
@@ -237,24 +239,6 @@ export default {
 
 <style>
 .store__container {
-    margin: 50px auto;
-    width: 100%;
-    max-width: 1200px;
-}
-.contact__page__form__container {
-    padding: 0vh 20px;
-    max-width: 800px;
-    margin: 50px auto;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: flex-start;
-    justify-content: center;
-}
-.contact__form__header {
-    color: #FCA24D;
-    margin: 0 0 30px;
-    font-size: 1.4em;
-    line-height: 1.4em;
+    
 }
 </style>

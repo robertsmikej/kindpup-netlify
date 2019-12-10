@@ -45,7 +45,7 @@ export default {
 <style>
     nav {
         width: 100%;
-        height: 90px;
+        height: 80px;
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
@@ -120,6 +120,7 @@ export default {
         .nav__inner {
             position: relative;
             padding: 0;
+            justify-content: center;
         }
         .nav__logo {
             max-width: 100%;

@@ -1,8 +1,8 @@
 <template>
-    <section class="container">
+    <main>
         <h1>Thank you for your interest in {{ sitewide.name }}!</h1>
         <h2>We'll be in touch soon.</h2>
-    </section>
+    </main>
 </template>
 
 <script>
