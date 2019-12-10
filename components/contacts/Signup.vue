@@ -38,19 +38,6 @@ export default {
         //         console.log(Response);
         //     });
         // }
-    },
-    head () {
-        return {
-            title: "Kind Pup | Natural CBD Oil for dogs",
-            meta: [
-                { 
-                    hid: 'description',
-                    name: 'description',
-                    content: "Kind Pup CBD Oil is radical!",
-                    hid: 'robots', name: 'robots', content: 'index, follow'
-                }
-            ]
-        }
     }
 }
 </script>
