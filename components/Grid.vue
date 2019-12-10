@@ -1,7 +1,7 @@
 <template>
     <div class="grid__container">
         <div class="grid__container__inner">
-            <div class="grid__cells">
+            <div class="grid__cells" v-if="items">
                 <div class="grid__cell" v-for="(item, index) in items" :key="index">
                     <div class="grid__cell__image__container">
                         <img class="grid__cell__image" :src="item.grid_image.data.full_url"/>

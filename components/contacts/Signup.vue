@@ -1,7 +1,7 @@
 <template>
     <div class="sign__up__container">
-        <div class="sign__up__text__container" v-html="$md.render(signup.text)"></div>
-        <div class="sign__up__input__container">
+        <div class="sign__up__text__container" v-if="signup.text" v-html="$md.render(signup.text)"></div>
+        <div class="sign__up__input__container" v-if="signup.button_text">
             <form id="contact__form" data-netlify="true" name="Email-Signup" class="sign__up__form" action="/thanks" method="post">
                 <input type="hidden" name="Email-Signup" value="Sign Up Box Submission" />
                 <input aria-label="Email Address" name="email" placeholder="Eg. kindpup@gmail.com" type="email" v-model="signUpFormData.email" required class="sign__up__input"/>

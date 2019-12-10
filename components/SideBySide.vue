@@ -1,9 +1,9 @@
 <template>
     <div class="side__by__side">
-        <div class="sbs__img__container">
+        <div class="sbs__img__container" v-if="section.section_images[0].image">
             <div class="sbs__img__container__inner" :style="{backgroundImage: 'url(' + section.section_images[0].image  + ')' }"></div>
         </div>
-        <div class="sbs__text__container">
+        <div class="sbs__text__container" v-if="section.section_text[0].text">
             <div class="sbs__text__inner" v-html="$md.render(section.section_text[0].text)"></div>
         </div>
     </div>
