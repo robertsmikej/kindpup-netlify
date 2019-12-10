@@ -43,7 +43,8 @@ export default {
  
   modules: [
     // Doc: https://github.com/nuxt-community/axios-module#usage
-    '@nuxtjs/markdownit'
+    '@nuxtjs/markdownit',
+    // ['@nuxtjs/google-tag-manager', { id: 'GTM-XXXXXXX' }]
   ],
   markdownit: {
     injected: true
@@ -52,6 +53,6 @@ export default {
   ** Build configuration
   */
   build: {
-    
+
   }
 };

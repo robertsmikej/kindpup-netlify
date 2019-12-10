@@ -80,6 +80,7 @@ export default {
         width: 100%;
         margin: 0 auto;
         position: relative;
+        min-height: 500px;
     }
     .hero.heroNoImage {
         min-height: 0;
