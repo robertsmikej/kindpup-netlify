@@ -1,6 +1,6 @@
 {
   "creeper_bar": {
-    "shown": true,
+    "status": true,
     "text": "Looking To Invest In Doggy CBD?",
     "link": "/invest"
   },
