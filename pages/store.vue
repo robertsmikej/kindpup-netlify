@@ -1,37 +1,37 @@
 <template>
     <section class="container">
         <Hero :heroSlides="page.hero" :heroOptions="page.hero_options"/>
-        <div class="contact__page__form__container">
-            <h3 class="contact__form__header">Please fill out the form below to contact us</h3>
-            <ContactUs :contactCompany="false" :messageText="'How Can We Help?'"/>
+        <div class="store__container">
+            <div id='collection-component-1575936425585'></div>
+            <div v-html="page.page_code"></div>
         </div>
     </section>
 </template>
 
 <script>
-const axios = require('axios');
-
 import Hero from '~/components/sitewide/Hero.vue'
-import ContactUs from '~/components/contacts/ContactUsForm.vue'
 
 export default {
     components: {
-        Hero,
-        ContactUs
+        Hero
+        
     },
     computed: {
         page: function () {
-            return this.$store.state.pages.contact
+            return this.$store.state.pages.store
         }
     },
     head () {
         return {
-            title: "Kind Pup | Contact Us",
+            // script: [
+            //     { src: 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js' }
+            // ],
+            title: "Kind Pup | Store",
             meta: [
                 { 
                     hid: 'description',
                     name: 'description',
-                    content: "Do you have any questions for the Kind Pup? We're here to help with your dog CBD questions!",
+                    content: "Our CBD is the Dog-Gone best!",
                     hid: 'robots', name: 'robots', content: 'index, follow'
                 }
             ]

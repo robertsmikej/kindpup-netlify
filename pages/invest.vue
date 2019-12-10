@@ -1,16 +1,13 @@
 <template>
     <section class="container">
-        <Hero :hero="page.hero"/>
+        <Hero :heroSlides="page.hero" :heroOptions="page.hero_options"/>
         <div class="investor__contact__outer">
             <div class="investor__information">
                 <div class="investor__information__inner">
                     <div class="information__img__container">
-                        <img :src="page.page_section_1.image_1" :alt="page.hero.para" class="information__img">
+                        <img :src="page.sections.invester_presentation.section_images[0].image" :alt="page.sections.invester_presentation.section_name" class="information__img">
                     </div>
-                    <div class="information__text__container">
-                        <h3>Get Our Investor Presentation Below</h3>
-                        <p>This paragraph is totally stolen. Fill out this form to be emailed our investor presentation which includes an overview of our business vision, overall market strategy, brand platform, management team and more.</p>
-                    </div>
+                    <div class="information__text__container" v-html="$md.render(page.sections.invester_presentation.section_text[0].text)"></div>
                 </div>
             </div>
             <div class="investor__contact__inner">
@@ -94,8 +91,9 @@ export default {
     order: 2;
 }
 .information__img {
-    max-width: 360px;
+    max-width: 320px;
     min-height: 200px;
+    max-height: 300px;
     display: block;
     object-fit: contain
 }
