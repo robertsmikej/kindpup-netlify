@@ -105,7 +105,7 @@ export default {
         }
         .sign__up__container h3 {
             margin: 0 auto 10px;
-            font-size: 1.1em;
+            font-size: 1em;
             line-height: 1em;
         }
     }

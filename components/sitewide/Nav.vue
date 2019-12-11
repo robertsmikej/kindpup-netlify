@@ -116,11 +116,13 @@ export default {
         nav {
             width: 100%;
             height: 60px;
+            overflow: visible;
         }
         .nav__inner {
             position: relative;
             padding: 0;
             justify-content: center;
+            overflow: visible;
         }
         .nav__logo {
             max-width: 100%;
@@ -140,9 +142,10 @@ export default {
             justify-content: center;
             align-items: center;
             position: fixed;
-            top: 90px;
+            top: 88px;
             left: 100%;
             background: #FFF;
+            flex: 1 1 auto;
         }
         .showMobileNav {
             left: 0px;
